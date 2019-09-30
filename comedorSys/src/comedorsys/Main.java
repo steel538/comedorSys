@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package comedorsys;
 
 /**
  *
- * @author Administrador
+ * @author Ezequias
  */
 public class Main extends javax.swing.JFrame {
 
@@ -19,16 +15,15 @@ public class Main extends javax.swing.JFrame {
     PanelHistoricos panelhistoricos;
     
     public Main() {
-        
-        System.out.println("Hello World!"); // Display the string.
+        //System.out.println("Hello World!"); // Display the string.
         
         initComponents();
         setSize(800,450);
         
         
-        //panelingresarvehiculo = new PanelIngresarVehiculo();
-        //panelmenus.setBounds(300,0,473,400);
-        //add(panelmenus);
+        panelmenus = new PanelMenu();
+        panelmenus.setBounds(300,0,473,400);
+        add(panelmenus);
         
         //panelListarVehiculos = new PanelListarVehiculos();
         //panelhistoricos.setBounds(350,0,1116,400);
@@ -53,6 +48,7 @@ public class Main extends javax.swing.JFrame {
         btnSalir = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 440));
 
         Menu.setPreferredSize(new java.awt.Dimension(316, 434));
 
@@ -118,13 +114,11 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 379, Short.MAX_VALUE))
+                .addGap(0, 436, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -132,15 +126,19 @@ public class Main extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
-        System.exit(0);
-    }   
-    
-    
+        setSize(800,450);
+        panelhistoricos.setVisible(false);
+        panelmenus.setVisible(true);
+        
+        revalidate();
+        repaint();
+    }
+        
     /**
      * @param args the command line arguments
      */
